@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from agent import ask_agent
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 app = FastAPI()
 
